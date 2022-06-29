@@ -36,10 +36,10 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `shop`.`products` ;
 
 CREATE TABLE IF NOT EXISTS `shop`.`products` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NULL,
   `price` DECIMAL(11,2) NULL,
-  `suppliers_id` INT NOT NULL,
+  `suppliers_id` INT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_products_suppliers_idx` (`suppliers_id` ASC) VISIBLE,
   CONSTRAINT `fk_products_suppliers`

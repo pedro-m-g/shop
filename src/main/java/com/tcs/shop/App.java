@@ -1,11 +1,14 @@
 package com.tcs.shop;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
 
 import com.tcs.shop.data.DataSource;
+import com.tcs.shop.data.dao.ProductDAO;
+import com.tcs.shop.data.models.Product;
 
 /**
  * Hello world!
@@ -27,6 +30,11 @@ public class App
         }
         try (Connection connection = DataSource.connect(properties)) {
             System.out.println("Connected successfully to database");
+
+            ProductDAO productDAO = new ProductDAO(connection);
+            Product product = new Product("Pleishon 5", new BigDecimal("12000"));
+            productDAO.registerProduct(product);
+            
         } catch (SQLException e) {
             System.err.println("Could not connect to database");
             System.exit(1);
