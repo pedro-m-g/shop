@@ -30,4 +30,9 @@ public class Product {
     return price;
   }
 
+  @Override
+  public String toString() {
+    return String.format("[%d] %s $%s", id, name, price);
+  }
+
 }
