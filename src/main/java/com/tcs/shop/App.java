@@ -19,6 +19,9 @@ public class App
 
     private static final String DATABASE_PROPERTIES_FILE = "/database.properties";
 
+    /**
+     * Search for Model-View-Controller design pattern
+     */
     public static void main( String[] args )
     {
         Properties properties = new Properties();

@@ -47,4 +47,13 @@ public class ProductDAO {
     }
   }
 
+  /**
+   * Implement updateProduct(Product product)
+   */
+
+
+   /**
+   * Implement deleteProduct(Product product)
+   */
+
 }
