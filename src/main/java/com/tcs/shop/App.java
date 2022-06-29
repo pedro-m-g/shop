@@ -1,9 +1,9 @@
 package com.tcs.shop;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Properties;
 
 import com.tcs.shop.data.DataSource;
@@ -32,9 +32,13 @@ public class App
             System.out.println("Connected successfully to database");
 
             ProductDAO productDAO = new ProductDAO(connection);
-            Product product = new Product("Pleishon 5", new BigDecimal("12000"));
-            productDAO.registerProduct(product);
-            
+            /*
+             * Product product = new Product("Pleishon 5", new BigDecimal("12000"));
+             * productDAO.registerProduct(product);
+             */
+
+            List<Product> products = productDAO.listProducts();
+            System.out.println(products);
         } catch (SQLException e) {
             System.err.println("Could not connect to database");
             System.exit(1);
